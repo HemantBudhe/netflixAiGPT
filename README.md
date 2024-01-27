@@ -1,11 +1,20 @@
 # Netflix GPT
 
--Create React App
+- Create React App
 - Congigured TailwindCSS
 - Header
+- Routing of App
 - Login Form
 - Sign Up Form
+- useRef Hook
+- Firebase Setup 
+- Deploying our app to production on Firebase 
+  (https://netflixaigpt.web.app)
+- Creat SignUp User Account
+- Implement Sign In user Api
+- Created Redux Storewith userSlice
 - 
+
 # Features
 - Login/Sign Up
     - Sign In/Sign Up Form
