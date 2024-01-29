@@ -1,29 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
-import { API_OPTIONS } from '../utils/constants';
-import { useDispatch } from 'react-redux';
-import { addNowPlayingMovies } from '../utils/movieSlice';
+
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
+import MainContainer from './MainContainer';
+import SecondaryConatainer from './SecondaryConatainer';
 
 const Browse = () => {
 
-  //Fetch Data from TMDB API and update store
-  const dispatch = useDispatch();
+  useNowPlayingMovies();
 
-  const getNowPlayingMovies = async () =>{
-    const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', API_OPTIONS);
-    const json = await data.json();
-    console.log(json.results);
-    //when we console, object appears two times. why?
-    // because of strict mode in index.js. React does extra rendering to check inconsistany between your call. it only happen in developing mode not in build mode. 
-    dispatch(addNowPlayingMovies(json.results));
-  };
-
-  useEffect(()=>{
-    getNowPlayingMovies();
-  },[])
   return (
     <div>
-      <Header/>j
+      <Header/>
+      <MainContainer/>
+      <SecondaryConatainer/>
+      {/*
+        MainContainer
+         - VideoBackground
+         - VideoTitle
+        SecondaryContainer
+          - MovieList * n
+          - cards * n
+  */}
     </div>
   );
 }

@@ -83,7 +83,7 @@ const Login = () => {
     };
 
   return (
-    <div>
+    <div className='overflow-x-clip'>
        <Header/>
        <div className='absolute'>
          <img 
