@@ -10,7 +10,7 @@ const usePopularMovies = () =>{
   const popularMovies = useSelector((store)=> store.movies.popularMovies);
 
   const getPopularMovies = async () =>{
-    const data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1', API_OPTIONS);
+    const data = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', API_OPTIONS);
     const json = await data.json();
     // console.log(json.results);
     //when we console, object appears two times. why?

@@ -1,15 +1,12 @@
 import React from 'react';
-import useMovieTrailer from '../hooks/useMovieTrailer';
 import { useSelector } from 'react-redux';
 
-const VideoBackground = ({movieId}) => {
-    const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
-    
+const MovieTrailer = () => {
 
-    useMovieTrailer(movieId);
+    const trailerVideo = useSelector((store) => store.movie?.trailerVideo);
 
   return (
-    <div className=" w-[100%] aspect-video">
+    <div>
     <iframe
       className="w-[100%] aspect-video"
       src={
@@ -20,8 +17,8 @@ const VideoBackground = ({movieId}) => {
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     ></iframe>
-  </div>
+    </div>
   );
 }
 
-export default VideoBackground;
+export default MovieTrailer;
